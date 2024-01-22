@@ -1,3 +1,7 @@
+let userPoint = 0;
+let compPoint = 0;
+let drawAmount = 0;
+
 function game(userPoint, compPoint, drawAmount) {
 
     function getComputerChoice() {
@@ -41,25 +45,17 @@ function game(userPoint, compPoint, drawAmount) {
 
     console.log(statement);
 
-    if (result == "You Won") {userPoint=+1}
-    if (result == "You Lost") {compPoint=+1}
-    if (result == "Draw") {drawAmount=+1}
+    if (result == "You Won") {userPoint= userPoint+1}
+    if (result == "You Lost") {compPoint=compPoint+1}
+    if (result == "Draw") {drawAmount=drawAmount+1}
 
     return (userPoint,compPoint, drawAmount);
 }
 
 function report(userPoint, compPoint, drawAmount) {
-    console.log(`Final Results : \n You : ${userPoint}\n Computer : ${compPoint}\n Draws : ${drawAmount}`);
+    alert(`Final Results : \n You : ${userPoint}\n Computer : ${compPoint}\n Draws : ${drawAmount}`);
 }
 
-userPoint = 0;
-compPoint = 0;
-drawAmount = 0;
-
-game(userPoint, compPoint, drawAmount);
-game(userPoint, compPoint, drawAmount);
-game(userPoint, compPoint, drawAmount);
-game(userPoint, compPoint, drawAmount);
 game(userPoint, compPoint, drawAmount);
 
 report(userPoint, compPoint, drawAmount);
