@@ -2,7 +2,7 @@ let userPoint = 0;
 let compPoint = 0;
 let drawAmount = 0;
 
-function game(userPoint, compPoint, drawAmount) {
+function game() {
 
     function getComputerChoice() {
         let randomNumber = Math.floor(Math.random() * 3);
@@ -56,6 +56,10 @@ function report(userPoint, compPoint, drawAmount) {
     alert(`Final Results : \n You : ${userPoint}\n Computer : ${compPoint}\n Draws : ${drawAmount}`);
 }
 
+game(userPoint, compPoint, drawAmount);
+game(userPoint, compPoint, drawAmount);
+game(userPoint, compPoint, drawAmount);
+game(userPoint, compPoint, drawAmount);
 game(userPoint, compPoint, drawAmount);
 
 report(userPoint, compPoint, drawAmount);
