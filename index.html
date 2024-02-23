@@ -4,19 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <style>
     * {
         margin: 0;
     }
     .background {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100vw;
         height: 100vh;
-        background: black;
+        background: rgb(255, 255, 255);
+    }
+    button {
+        border: solid 2px black;
+        font-size: 40px;
+        padding: 2em 4em;
     }
 </style>
 <body>
-    <div class="background"></div>
+    <div class="background">
+        <button id="start">Start Game</button>
+        <div id ="btnContainer"></div>
+    </div>
+
 </body>
 </html>

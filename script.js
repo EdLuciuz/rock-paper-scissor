@@ -1,8 +1,49 @@
+const btnStart = document.querySelector('#start');
+const container = document.querySelector('#btnContainer')
+
+const btnSci = document.createElement('button')
+const btnRock = document.createElement('button')
+const btnPap = document.createElement('button')
+
+btnRock.textContent = 'Rock';
+btnSci.textContent = 'Scissor';
+btnPap.textContent = 'Paper';
+
+btnStart.addEventListener('click', () => {
+
+    container.appendChild(btnRock);
+    container.appendChild(btnPap);
+    container.appendChild(btnSci);
+
+    btnStart.remove();
+});
+
 let userPoint = 0;
 let compPoint = 0;
 let drawAmount = 0;
 
-function game() {
+btnPap.addEventListener('click', () => {
+    let userChoice = 'paper';
+
+    game(userChoice,userPoint, compPoint, drawAmount);
+    report(userPoint,compPoint,drawAmount)
+});
+
+btnRock.addEventListener('click', () => {
+    let userChoice = 'rock';
+
+    game(userChoice,userPoint, compPoint, drawAmount);
+    report(userPoint,compPoint,drawAmount)
+});
+
+btnSci.addEventListener('click', () => {
+    let userChoice = 'scissor';
+
+    game(userChoice,userPoint, compPoint, drawAmount);
+    report(userPoint,compPoint,drawAmount)
+});
+
+function game(userChoice) {
 
     function getComputerChoice() {
         let randomNumber = Math.floor(Math.random() * 3);
@@ -38,8 +79,6 @@ function game() {
         return (statement, result);
     }
 
-    let userChoice = (prompt("Choose An Option")).toLowerCase();
-
     getComputerChoice();
     finalResult(compChoice, userChoice);
 
@@ -55,11 +94,3 @@ function game() {
 function report(userPoint, compPoint, drawAmount) {
     alert(`Final Results : \n You : ${userPoint}\n Computer : ${compPoint}\n Draws : ${drawAmount}`);
 }
-
-game(userPoint, compPoint, drawAmount);
-game(userPoint, compPoint, drawAmount);
-game(userPoint, compPoint, drawAmount);
-game(userPoint, compPoint, drawAmount);
-game(userPoint, compPoint, drawAmount);
-
-report(userPoint, compPoint, drawAmount);
