@@ -22,25 +22,44 @@ let userPoint = 0;
 let compPoint = 0;
 let drawAmount = 0;
 
+function removeButton() {
+    btnPap.remove()
+    btnRock.remove()
+    btnSci.remove()
+}
+
+function showResult(result) {
+    const resultText = document.createElement('p')
+    resultText.textContent = result
+    resultText.classList.add('result')
+    container.appendChild(resultText)
+}
+
+
+
+
 btnPap.addEventListener('click', () => {
     let userChoice = 'paper';
 
     game(userChoice,userPoint, compPoint, drawAmount);
-    report(userPoint,compPoint,drawAmount)
+    removeButton();
+    showResult(result)
 });
 
 btnRock.addEventListener('click', () => {
     let userChoice = 'rock';
 
     game(userChoice,userPoint, compPoint, drawAmount);
-    report(userPoint,compPoint,drawAmount)
+    removeButton();
+    showResult(result)
 });
 
 btnSci.addEventListener('click', () => {
     let userChoice = 'scissor';
 
     game(userChoice,userPoint, compPoint, drawAmount);
-    report(userPoint,compPoint,drawAmount)
+    removeButton();
+    showResult(result)
 });
 
 function game(userChoice) {
@@ -88,7 +107,7 @@ function game(userChoice) {
     if (result == "You Lost") {compPoint=compPoint+1}
     if (result == "Draw") {drawAmount=drawAmount+1}
 
-    return (userPoint,compPoint, drawAmount);
+    return (userPoint,compPoint, drawAmount, result);
 }
 
 function report(userPoint, compPoint, drawAmount) {
