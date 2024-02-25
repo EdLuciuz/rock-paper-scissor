@@ -4,19 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    * {
-        margin: 0;
-    }
-    .background {
-        width: 100vw;
-        height: 100vh;
-        background: black;
-    }
-</style>
 <body>
-    <div class="background"></div>
+    <div class="mainContainer">
+        <div id="card" class="card">
+            <button id="start">Start Game</button>
+            <div class="btnContainer" id ="btnContainer"></div>
+        </div>
+    </div>
+
 </body>
 </html>
