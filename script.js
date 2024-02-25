@@ -1,16 +1,21 @@
 const btnStart = document.querySelector('#start');
 const container = document.querySelector('#btnContainer')
+const card = document.querySelector('#card')
 
 const btnSci = document.createElement('button')
 const btnRock = document.createElement('button')
 const btnPap = document.createElement('button')
+
+const btnRestart = document.createElement('button')
+btnRestart.textContent = 'Play Again'
+
+const resultText = document.createElement('p')
 
 btnRock.textContent = 'Rock';
 btnSci.textContent = 'Scissor';
 btnPap.textContent = 'Paper';
 
 btnStart.addEventListener('click', () => {
-
     container.appendChild(btnRock);
     container.appendChild(btnPap);
     container.appendChild(btnSci);
@@ -29,10 +34,12 @@ function removeButton() {
 }
 
 function showResult(result) {
-    const resultText = document.createElement('p')
     resultText.textContent = result
     resultText.classList.add('result')
-    container.appendChild(resultText)
+    
+    card.prepend(resultText)
+
+    return resultText;
 }
 
 
@@ -44,6 +51,7 @@ btnPap.addEventListener('click', () => {
     game(userChoice,userPoint, compPoint, drawAmount);
     removeButton();
     showResult(result)
+    container.appendChild(btnRestart)
 });
 
 btnRock.addEventListener('click', () => {
@@ -52,6 +60,7 @@ btnRock.addEventListener('click', () => {
     game(userChoice,userPoint, compPoint, drawAmount);
     removeButton();
     showResult(result)
+    container.appendChild(btnRestart)
 });
 
 btnSci.addEventListener('click', () => {
@@ -60,7 +69,19 @@ btnSci.addEventListener('click', () => {
     game(userChoice,userPoint, compPoint, drawAmount);
     removeButton();
     showResult(result)
+    card.appendChild(btnRestart)
 });
+
+btnRestart.addEventListener('click', () => {
+    container.appendChild(btnRock);
+    container.appendChild(btnPap);
+    container.appendChild(btnSci);
+
+    btnRestart.remove();
+    resultText.remove()
+});
+
+
 
 function game(userChoice) {
 
