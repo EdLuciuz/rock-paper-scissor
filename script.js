@@ -1,5 +1,4 @@
 const btnStart = document.querySelector('#start');
-const container = document.querySelector('#btnContainer')
 const card = document.querySelector('#card')
 
 const btnSci = document.createElement('button')
@@ -7,6 +6,8 @@ const btnRock = document.createElement('button')
 const btnPap = document.createElement('button')
 
 const btnRestart = document.createElement('button')
+const container = document.createElement('div')
+container.classList.add('btnContainer')
 btnRestart.textContent = 'Play Again'
 
 const resultText = document.createElement('p')
@@ -16,6 +17,7 @@ btnSci.textContent = 'Scissor';
 btnPap.textContent = 'Paper';
 
 btnStart.addEventListener('click', () => {
+    card.appendChild(container)
     container.appendChild(btnRock);
     container.appendChild(btnPap);
     container.appendChild(btnSci);
